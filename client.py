@@ -23,7 +23,7 @@ def receiveImg(s):
 
 
 def sendString(data, s):
-    s.sendall(struct.pack('ii', TRY_TO_GUESS_CODE, len(data)) + data)
+    s.sendall(struct.pack('ii', TRY_TO_GUESS_CODE, len(data)) + data.encode())
 
 
 def bgr2gray(img):
