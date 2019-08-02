@@ -17,7 +17,7 @@ def read(size, s):
 def receiveImg(s):
     rows, cols, channels, length = struct.unpack('iiii', read(4*4, s))
     data = read(length, s)
-    buf = np.fromstring(data, dtype=np.uint8)
+    buf = np.frombuffer(data, dtype=np.uint8)
     img = cv.imdecode(buf, cv.IMREAD_COLOR)
     return img.reshape([rows, cols, channels])
 
